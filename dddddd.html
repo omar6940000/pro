@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>مودال بحث أيقونة فقط</title>
+<style>
+  body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    margin: 0;
+    background: #fff;
+    color: #000;
+  }
+
+  #toggle-search {
+    display: none;
+  }
+
+  /* زر فتح البحث – أيقونة فقط بدون ظل */
+  label[for="toggle-search"].open-btn {
+    cursor: pointer;
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    width: 48px;
+    height: 48px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 10001;
+    background: none;
+    border: none;
+    padding: 0;
+  }
+
+  label[for="toggle-search"].open-btn svg {
+    width: 36px;
+    height: 36px;
+    stroke: #000;
+    fill: none;
+    stroke-width: 2.5;
+  }
+
+  /* أخفي زر البحث لما المودال ظاهر */
+  #toggle-search:checked + label.open-btn {
+    display: none;
+  }
+
+  /* مودال البحث */
+  .search-panel {
+    position: fixed;
+    top: 0; left: 0; right: 0; bottom: 0;
+    background: rgba(0, 0, 0, 0.85);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    visibility: hidden;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    z-index: 10000;
+  }
+
+  #toggle-search:checked ~ .search-panel {
+    visibility: visible;
+    opacity: 1;
+  }
+
+  .search-panel form {
+    background: #fff;
+    padding: 30px 40px;
+    border-radius: 12px;
+    width: 90%;
+    max-width: 450px;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+  }
+
+  label[for="toggle-search"].close-btn {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    font-size: 30px;
+    color: #000;
+    cursor: pointer;
+    user-select: none;
+  }
+
+  .search-panel input[list="brands"] {
+    padding: 15px;
+    font-size: 18px;
+    border: 2px solid #000;
+    border-radius: 8px;
+    margin-top: 60px;
+    margin-bottom: 20px;
+    color: #000;
+    background: #fff;
+  }
+
+  .search-panel input[list="brands"]:focus {
+    outline: none;
+    border-color: #333;
+  }
+
+  .search-panel button {
+    padding: 15px;
+    font-size: 18px;
+    background: #000;
+    border: none;
+    color: #fff;
+    border-radius: 8px;
+    cursor: pointer;
+  }
+</style>
+</head>
+<body>
+
+<input type="checkbox" id="toggle-search" />
+
+<!-- زر فتح البحث – أيقونة فقط -->
+<label for="toggle-search" class="open-btn" title="فتح البحث">
+  <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+    <circle cx="11" cy="11" r="7"/>
+    <line x1="16.5" y1="16.5" x2="22" y2="22"/>
+  </svg>
+</label>
+
+<div class="search-panel" role="dialog" aria-modal="true" aria-labelledby="searchLabel">
+  <form action="#" method="GET">
+    <label for="toggle-search" class="close-btn" title="إغلاق البحث" aria-label="إغلاق البحث">&times;</label>
+    <input list="brands" name="brand" placeholder="اكتب اسم البراند" autocomplete="off" aria-label="بحث عن البراند" autofocus />
+    <datalist id="brands">
+      <option value="Nike">
+      <option value="Adidas">
+      <option value="Puma">
+      <option value="Reebok">
+      <option value="Under Armour">
+      <option value="New Balance">
+      <option value="Converse">
+      <option value="Vans">
+      <option value="Asics">
+      <option value="Fila">
+    </datalist>
+    <button type="submit">بحث</button>
+  </form>
+</div>
+
+</body>
+</html>

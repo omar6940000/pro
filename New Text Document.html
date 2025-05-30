@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Luxury Cards</title>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Roboto&display=swap" rel="stylesheet" />
+  <style>
+    body {
+      background-color: #fff;
+      font-family: 'Playfair Display', serif;
+      padding: 40px;
+      margin: 0;
+    }
+
+    .grid-container {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 30px;
+      max-width: 1400px;
+      margin: auto;
+    }
+
+    .luxury-card {
+      background-color: #1a1a1a;
+      border-radius: 18px;
+      box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+      overflow: hidden;
+      color: #eee;
+      border: 1px solid #2a2a2a;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .luxury-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 12px 30px rgba(0, 0, 0, 0.2);
+    }
+
+    .luxury-card img {
+      width: 100%;
+      height: 250px;
+      object-fit: contain;
+      background-color: #111;
+      border-bottom: 1px solid #333;
+    }
+
+    .luxury-content {
+      padding: 25px;
+      text-align: center;
+    }
+
+    .luxury-title {
+      font-size: 22px;
+      margin-bottom: 10px;
+      color: #f5f5f5;
+    }
+
+    .luxury-subtitle {
+      font-size: 15px;
+      font-family: 'Roboto', sans-serif;
+      color: #aaa;
+      margin-bottom: 20px;
+    }
+
+    .luxury-btn {
+      display: inline-block;
+      padding: 12px 32px;
+      border: 2px solid #bfa76f;
+      color: #bfa76f;
+      background: transparent;
+      border-radius: 30px;
+      text-decoration: none;
+      font-size: 14px;
+      transition: all 0.3s ease;
+    }
+
+    .luxury-btn:hover {
+      background-color: #bfa76f;
+      color: #000;
+    }
+
+    /* Tablet */
+    @media (max-width: 767px) {
+      .grid-container {
+        grid-template-columns: repeat(3, 1fr);
+      }
+    }
+
+    /* Small screens - Mobile */
+    @media (max-width: 600px) {
+      .grid-container {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .luxury-card {
+        flex-direction: row;
+        height: auto;
+      }
+
+      .luxury-card img {
+        width: 45%;
+        height: auto;
+        border-bottom: none;
+        border-left: 1px solid #333;
+      }
+
+      .luxury-content {
+        width: 55%;
+        padding: 15px;
+        text-align: left;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+      }
+
+      .luxury-title {
+        font-size: 16px;
+        margin: 0 0 10px 0;
+        text-align: center;
+      }
+
+      .luxury-subtitle {
+        font-size: 13px;
+        margin-bottom: 10px;
+      }
+
+      .luxury-btn {
+        width: 100%;
+        font-size: 13px;
+        padding: 10px 0;
+        text-align: center;
+      }
+    }
+
+    @media (max-width: 400px) {
+      .grid-container {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="grid-container">
+    <div class="luxury-card">
+      <img src="product1.jpg" alt="Product 1" />
+      <div class="luxury-content">
+        <h2 class="luxury-title">Royal Perfume</h2>
+        <p class="luxury-subtitle">Oud & Amber scent</p>
+        <a href="#" class="luxury-btn">CART NOW</a>
+      </div>
+    </div>
+
+    <div class="luxury-card">
+      <img src="product2.jpg" alt="Product 2" />
+      <div class="luxury-content">
+        <h2 class="luxury-title">Leather Bracelet</h2>
+        <p class="luxury-subtitle">Handcrafted finish</p>
+        <a href="#" class="luxury-btn">CART NOW</a>
+      </div>
+    </div>
+
+    <div class="luxury-card">
+      <img src="product3.jpg" alt="Product 3" />
+      <div class="luxury-content">
+        <h2 class="luxury-title">Luxury Watch</h2>
+        <p class="luxury-subtitle">Elegant classic design</p>
+        <a href="#" class="luxury-btn">CART NOW</a>
+      </div>
+    </div>
+
+    <div class="luxury-card">
+      <img src="product4.jpg" alt="Product 4" />
+      <div class="luxury-content">
+        <h2 class="luxury-title">Premium Sunglasses</h2>
+        <p class="luxury-subtitle">UV protection & modern style</p>
+        <a href="#" class="luxury-btn">CART NOW</a>
+      </div>
+    </div>
+  </div>
+
+</body>
+</html>
